@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="title_activity_freecalculator">freecalculator</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="finally_tap_on_redeem_button_after_all_of_this_you_ll_get_free_credits_in_your_account_you_can_checkout_on_account_s_option_how_much_credits_you_have">Finally, tap on Redeem button. After all of this, you’ll get free credits in your account. You can checkout on account’s option how much credits you have.</string>
 </resources>
