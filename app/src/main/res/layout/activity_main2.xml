@@ -18,7 +18,7 @@
         android:text="Google Play Redeem Codes"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="21dp"
         android:background="@drawable/buttenstyle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
