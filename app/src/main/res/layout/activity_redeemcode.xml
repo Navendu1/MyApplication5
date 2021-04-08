@@ -26,7 +26,7 @@
                 android:layout_height="match_parent"
                 android:text="Stap 1:  Now Open Google Play Store and tap on Payments And Subscription option from dashboard."
                 android:textStyle="bold"
-                android:textSize="44dp"
+                android:textSize="45dp"
                 android:textColor="@color/black"/>
 
             <ImageView
