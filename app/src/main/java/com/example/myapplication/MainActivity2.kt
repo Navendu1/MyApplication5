@@ -25,7 +25,7 @@ class MainActivity2 : AppCompatActivity()  {
             startActivity(intent)}
 
       freeDaimond.setOnClickListener {
-          intent = Intent(applicationContext, freecalculator::class.java)
+          intent = Intent(applicationContext, contean_freecalculator1::class.java)
             startActivity(intent)}
 
     }
