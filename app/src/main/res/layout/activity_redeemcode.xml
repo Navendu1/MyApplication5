@@ -41,7 +41,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Stap 2:\nGoto Rewards gift code section And Click on Redeem gift code Promo Code."
+                android:text="Stap 2:\nGoto0 Rewards gift code section And Click on Redeem gift code Promo Code."
                 android:textStyle="bold"
                 android:textSize="25dp"
                 android:textColor="@color/black"/>
