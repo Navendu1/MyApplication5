@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A769E"
+    android:background="@drawable/background_color"
     tools:context=".redeemcode">
 
     <ScrollView
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Stap 1:\nNow Open Google Play Store and tap on Payments And Subscription option from dashboard."
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:typeface="sans"
                 android:textSize="30sp"
                 android:textColor="@color/black"/>
@@ -36,13 +36,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:scaleType="fitXY"
-                tools:srcCompat="@drawable/photorc1" />
+                android:src="@drawable/photorc1" />
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Stap 2:\nGoto Rewards gift code section And Click on Redeem gift code Promo Code."
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="25dp"
                 android:textColor="@color/black"/>
 
@@ -51,13 +51,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:scaleType="fitXY"
-                tools:srcCompat="@drawable/photorc2" />
+                android:src="@drawable/photorc2" />
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Stap 3:\nEnter Free Google Play Redeem Promo Code."
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="25dp"
                 android:textColor="@color/black"/>
 
@@ -66,13 +66,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="500dp"
                 android:scaleType="fitXY"
-                tools:srcCompat="@drawable/photorc3" />
+                android:src="@drawable/photorc3" />
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/finally_tap_on_redeem_button_after_all_of_this_you_ll_get_free_credits_in_your_account_you_can_checkout_on_account_s_option_how_much_credits_you_have"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 android:textSize="25sp"
                 android:textColor="@color/black"/>
 
