@@ -25,7 +25,7 @@
                 android:id="@+id/textView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Stap 1:\nNow Open Google Play Store and tap on Payments And Subscription option from dashboard."
+                android:text="Stap 1:\nOpen Google Play Store and tap on Payments And Subscription option from dashboard."
                 android:textStyle="italic"
                 android:typeface="sans"
                 android:textSize="30sp"
