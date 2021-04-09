@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
+        <activity android:name=".help"></activity>
         <activity
             android:name=".freecalculator"
             android:label="@string/title_activity_freecalculator"
-            android:theme="@style/Theme.MyApplication.NoActionBar"></activity>
+            android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity android:name=".redeemcode" />
         <activity android:name=".opinionrewards" />
         <activity android:name=".MainActivity2" />

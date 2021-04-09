@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             Toast.makeText(this, "hello fake app", Toast.LENGTH_SHORT).show()
+
+            intent = Intent(applicationContext, MainActivity2::class.java)
+            startActivity(intent)
+
         }
 
     }
