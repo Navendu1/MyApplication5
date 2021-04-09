@@ -14,9 +14,12 @@
         android:layout_marginStart="101dp"
         android:layout_marginTop="164dp"
         android:layout_marginEnd="101dp"
+        android:textColorHint="@color/black"
         android:background="@drawable/edittextstyle"
+
         android:ems="10"
         android:hint="free fire ID"
+
         android:textAlignment="center"
         android:inputType="textPersonName"
 
@@ -35,6 +38,7 @@
         android:layout_marginEnd="103dp"
         android:ems="10"
         android:hint="Name"
+        android:textColorHint="@color/black"
         android:background="@drawable/edittextstyle"
         android:textAlignment="center"
         android:inputType="textPersonName"
@@ -53,6 +57,7 @@
         android:background="@drawable/edittextstyle"
         android:ems="10"
         android:hint="Email id"
+        android:textColorHint="@color/black"
         android:textAlignment="center"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"

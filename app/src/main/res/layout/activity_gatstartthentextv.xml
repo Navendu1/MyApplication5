@@ -29,7 +29,7 @@
         android:layout_marginTop="156dp"
         android:layout_marginEnd="43dp"
         android:layout_marginBottom="46dp"
-        android:text="TextView"
+        android:text="TextView "
         android:background="@drawable/edittextstyle"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
