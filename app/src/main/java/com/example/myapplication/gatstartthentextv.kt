@@ -19,7 +19,7 @@ class gatstartthentextv : AppCompatActivity() {
         textView = findViewById(R.id.textView11)
 
     val name =intent.getStringExtra("name")
-            this.textView.text = "Result \n $name \n Please Waitiing for 72-120 hours, \n if not working please tay agen  "
+            this.textView.text = "Result \n $name \n Please Waitiing for 72-120 hours, \n if not working please tay agen maybe "
 
 
         button.setOnClickListener {
