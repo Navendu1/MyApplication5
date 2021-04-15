@@ -43,7 +43,7 @@ class help : AppCompatActivity() {
 
             Handler(Looper.getMainLooper()).postDelayed({
                 loadingdialog.hideDialog()
-                  textView.isVisible= true
+                textView.isVisible= true
 
             }, (2000..6000).random().toLong())
             textView.isVisible=false

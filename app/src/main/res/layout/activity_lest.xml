@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@android:color/holo_orange_light"
     tools:context=".lestActivity">
 
     <Button
@@ -12,28 +12,44 @@
         android:layout_width="293dp"
         android:layout_height="61dp"
         android:layout_marginStart="49dp"
-        android:layout_marginTop="219dp"
         android:layout_marginEnd="69dp"
         android:layout_marginBottom="33dp"
-        android:text="Give Us 5 Start"
         android:background="@drawable/buttenstyle"
+        android:text="Give Us 5 Start"
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="295dp"
         android:layout_height="53dp"
         android:layout_marginStart="49dp"
-        android:layout_marginTop="33dp"
         android:layout_marginEnd="67dp"
-        android:layout_marginBottom="365dp"
-        android:text="Try Again"
+        android:layout_marginBottom="260dp"
         android:background="@drawable/buttenstyle"
+        android:text="Try Again"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="375dp"
+        android:layout_height="204dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="142dp"
+        android:rotationX="17"
+
+        android:rotationY="6"
+        android:src="@drawable/ster5"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
 </androidx.constraintlayout.widget.ConstraintLayout>

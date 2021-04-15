@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    android:background="@android:color/holo_orange_light"
     tools:context=".MainActivity">
 
     <EditText
@@ -12,21 +12,21 @@
         android:layout_width="294dp"
         android:layout_height="57dp"
         android:layout_marginStart="101dp"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="160dp"
         android:layout_marginEnd="101dp"
-        android:textColorHint="@color/black"
         android:background="@drawable/edittextstyle"
-        android:textColor="@color/black"
-
         android:ems="10"
         android:hint="free fire ID"
 
-        android:textAlignment="center"
         android:inputType="textPersonName"
+        android:textAlignment="center"
 
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
 
 
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,7 +71,7 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button0"
         android:layout_width="209dp"
         android:layout_height="52dp"
         android:layout_marginStart="159dp"

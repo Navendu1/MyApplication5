@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/teal_700"
+    android:background="@android:color/holo_orange_light"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="280dp"
-        android:layout_height="59dp"
+        android:id="@+id/editTextTextPersonName15"
+        android:layout_width="320dp"
+        android:layout_height="78dp"
         android:layout_marginStart="94dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="108dp"
@@ -19,26 +19,26 @@
         android:hint="The Diamond You Want"
         android:inputType="number"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="281dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="52dp"
+        android:layout_width="175dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="67dp"
-        android:layout_marginEnd="70dp"
-        android:layout_marginBottom="297dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="268dp"
         android:background="@drawable/buttenstyle"
         android:text="Get Start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.342" />
 </androidx.constraintlayout.widget.ConstraintLayout>
