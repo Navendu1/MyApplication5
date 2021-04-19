@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             button.setOnClickListener {
-                Toast.makeText(this, "hello fake app", Toast.LENGTH_SHORT).show()
+
                 val editor: SharedPreferences.Editor = sharedPreferences.edit()
                 editor.putString(key_name,editText2.toString())
                 editor.apply()

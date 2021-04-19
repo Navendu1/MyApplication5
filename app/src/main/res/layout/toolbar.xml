@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/purple_700"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/help"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/buttenstyle"
+        android:shadowColor="@color/purple_500"
+        android:text="Help"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="57dp"
+        android:layout_height="27dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="7dp"
+        android:src="@drawable/ic_baseline_refresh_24" />
+
+
+</RelativeLayout>

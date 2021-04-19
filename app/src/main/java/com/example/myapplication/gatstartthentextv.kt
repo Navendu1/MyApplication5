@@ -21,7 +21,7 @@ class gatstartthentextv : AppCompatActivity() {
 
 
     val name =intent.getStringExtra("name")
-    this.textView.text = "Result \n $name$ \n Please waiting for 72-120 hours, \n if not working please try again. Actually lot of user so  diamond sending process slow. "
+    this.textView.text = "Result \n $name$ \n Please waiting for 72-120 hours, \n if not working please try again. Actually a lot of user Try To Redeem code, so diamond sending process slow. "
 
         button.setOnClickListener {
 

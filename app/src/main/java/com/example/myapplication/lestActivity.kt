@@ -13,6 +13,12 @@ class lestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lest)
         button = findViewById(R.id.button5)
+
+        button.setOnClickListener {
+            intent = Intent(applicationContext, MainActivity2::class.java)
+            startActivity(intent)
+        }
     }
+
 
 }

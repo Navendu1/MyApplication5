@@ -40,7 +40,7 @@ class MainActivity2 : AppCompatActivity()   {
 
 
         redeemCode.setOnClickListener {
-            intent = Intent(applicationContext, redeemcode::class.java)
+            intent = Intent(applicationContext, help::class.java)
             startActivity(intent)
         }
 

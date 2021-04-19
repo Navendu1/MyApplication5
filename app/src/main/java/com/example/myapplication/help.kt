@@ -1,13 +1,12 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.Button
-import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
+import android.view.View
+import android.widget.*
 import androidx.core.view.isVisible
 import kotlinx.coroutines.delay
 import kotlin.concurrent.thread
@@ -15,18 +14,29 @@ import kotlin.properties.Delegates
 
 class help : AppCompatActivity() {
 
-    lateinit var  textView: TextView
-    lateinit var  button: Button
+    lateinit var help: TextView
+    lateinit var textView : TextView
+    lateinit var refresh: ImageView
+    lateinit var noData: ImageView
+
+    lateinit var scrollView: ScrollView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_help)
-
+        scrollView = findViewById(R.id.scrollView2)
+        noData = findViewById(R.id.noData)
+        noData.isVisible=false
         val loadingdialog  = LoadingDialog(this)
 
 
 
         textView = findViewById(R.id.codeId)
-        button = findViewById(R.id.button6)
+//        button = findViewById(R.id.button6)
+//        val imageView: ImageView = findViewById(R.id.imageView9)
+
+        help = findViewById(R.id.help)
+        refresh = findViewById(R.id.refresh)
         var count : Int = 1
 
         val redeem1 = getString(R.string.redeem1)
@@ -35,9 +45,8 @@ class help : AppCompatActivity() {
         textView.text =  redeem1
 
 
-
-
-        button.setOnClickListener {
+        refresh.setOnClickListener {
+            Toast.makeText(this, "refresh", Toast.LENGTH_SHORT).show()
             loadingdialog.startLoading()
             count +=1
 
@@ -45,7 +54,7 @@ class help : AppCompatActivity() {
                 loadingdialog.hideDialog()
                 textView.isVisible= true
 
-            }, (2000..6000).random().toLong())
+            }, (2000..3000).random().toLong())
             textView.isVisible=false
 
             when (count) {
@@ -55,11 +64,49 @@ class help : AppCompatActivity() {
                 }
                 3 -> textView.text = redeem3
                 else -> { // Note the block
-                    textView.text = " nomore data"
-                    button.isVisible=false
+                    noData.isVisible= true
+                    scrollView.isVisible = false
+                    refresh.isVisible=false
                 }
             }
         }
+
+        help.setOnClickListener {
+            Toast.makeText(this, "help", Toast.LENGTH_SHORT).show()
+            intent = Intent(applicationContext, redeemcode::class.java)
+            startActivity(intent)
+
+            // goto help activity
+        }
+
+
+
+//        button.setOnClickListener {
+//            Toast.makeText(this, "poo", Toast.LENGTH_SHORT).show()
+//            loadingdialog.startLoading()
+//            count +=1
+//
+//            Handler(Looper.getMainLooper()).postDelayed({
+//                loadingdialog.hideDialog()
+//                  textView.isVisible= true
+//
+//            }, (2000..6000).random().toLong())
+//            textView.isVisible=false
+//
+//            when (count) {
+//                1 -> textView.text = redeem1
+//                2 -> {
+//                    textView.text =  redeem2
+//                }
+//                3 -> textView.text = redeem3
+//                else -> { // Note the block
+//                    textView.text = " nomore data"
+//                    button.isVisible=false
+//                }
+//            }
+//        }
+
+
 
     }
 }
