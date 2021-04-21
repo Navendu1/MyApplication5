@@ -42,6 +42,10 @@ class help : AppCompatActivity() {
         val redeem1 = getString(R.string.redeem1)
         val redeem2 = getString(R.string.redeem2)
         val redeem3 = getString(R.string.redeem3)
+        val redeem4 = getString(R.string.redeem4)
+        val redeem5 = getString(R.string.redeem5)
+        val redeem6 = getString(R.string.redeem6)
+        val redeem7 = getString(R.string.redeem7)
         textView.text =  redeem1
 
 
@@ -59,10 +63,14 @@ class help : AppCompatActivity() {
 
             when (count) {
                 1 -> textView.text = redeem1
-                2 -> {
+                2 ->
                     textView.text =  redeem2
-                }
+
                 3 -> textView.text = redeem3
+                4 -> textView.text = redeem4
+                5 -> textView.text = redeem5
+                6 -> textView.text = redeem6
+                7 -> textView.text = redeem7
                 else -> { // Note the block
                     noData.isVisible= true
                     scrollView.isVisible = false
@@ -81,30 +89,6 @@ class help : AppCompatActivity() {
 
 
 
-//        button.setOnClickListener {
-//            Toast.makeText(this, "poo", Toast.LENGTH_SHORT).show()
-//            loadingdialog.startLoading()
-//            count +=1
-//
-//            Handler(Looper.getMainLooper()).postDelayed({
-//                loadingdialog.hideDialog()
-//                  textView.isVisible= true
-//
-//            }, (2000..6000).random().toLong())
-//            textView.isVisible=false
-//
-//            when (count) {
-//                1 -> textView.text = redeem1
-//                2 -> {
-//                    textView.text =  redeem2
-//                }
-//                3 -> textView.text = redeem3
-//                else -> { // Note the block
-//                    textView.text = " nomore data"
-//                    button.isVisible=false
-//                }
-//            }
-//        }
 
 
 
