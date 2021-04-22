@@ -26,12 +26,6 @@
         <activity android:name=".lestActivity" />
         <activity android:name=".gatstartthentextv" />
         <activity android:name=".contean_freecalculator1" />
-
-        <activity
-            android:name=".freecalculator"
-            android:label="@string/title_activity_freecalculator"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MyApplication.NoActionBar" />
         <activity android:name=".redeemcode" />
         <activity android:name=".opinionrewards" />
         <activity android:name=".MainActivity2" />
@@ -43,6 +37,10 @@
             </intent-filter>
 
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
     </application>
 
 </manifest>
