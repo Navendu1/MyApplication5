@@ -4,13 +4,21 @@ import android.app.Dialog
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,10 +32,40 @@ class MainActivity : AppCompatActivity() {
     var key_name : String ="email"
     var sharepref : String ="mypref"
 
+    private var mInterstitialAd: InterstitialAd? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //ad adMob
+        MobileAds.initialize(this) {}
+        //adMob
+        var adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+
+                mInterstitialAd = interstitialAd
+            }
+        })
+
+
+        if(CheckNetwork.isInternetAvailable(this)) //returns true if internet available
+        {
+
+            //do something. loadwebview.
+        }
+        else
+        {
+            Toast.makeText(this,"No Internet Connection",Toast.LENGTH_LONG).show();
+        }
         MobileAds.initialize(this) {}
 
 
@@ -89,7 +127,36 @@ class MainActivity : AppCompatActivity() {
             }
             intent = Intent(applicationContext, MainActivity2::class.java)
             startActivity(intent)
-            Toast.makeText(this, "hello fake app", Toast.LENGTH_SHORT).show()
+
 
     }
+    private fun checkConnection() {
+        val manager = applicationContext.getSystemService(CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = manager.activeNetworkInfo
+        if (null != networkInfo) {
+            if (networkInfo.type == ConnectivityManager.TYPE_WIFI) {
+                Toast.makeText(this, "wifi canm", Toast.LENGTH_SHORT).show()
+            } else if (networkInfo.type == ConnectivityManager.TYPE_MOBILE) {
+                Toast.makeText(this, "mobile data", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        else {
+            val dialog = Dialog(this)
+            dialog.setContentView(R.layout.alert_dialog)
+
+            dialog.setCanceledOnTouchOutside(false)
+            dialog.window!!.setLayout(
+                    WindowManager.LayoutParams.WRAP_CONTENT,
+                    WindowManager.LayoutParams.WRAP_CONTENT
+            )
+
+            dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            
+            dialog.show()
+        }
+
+    }
+
+
 }
