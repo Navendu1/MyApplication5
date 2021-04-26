@@ -16,7 +16,7 @@ class help : AppCompatActivity() {
 
     lateinit var help: TextView
     lateinit var textView : TextView
-    lateinit var refresh: ImageView
+    lateinit var refresh: TextView
     lateinit var noData: ImageView
 
     lateinit var scrollView: ScrollView

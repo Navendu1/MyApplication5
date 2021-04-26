@@ -10,23 +10,30 @@
 
     <TextView
         android:id="@+id/help"
-        android:layout_width="67dp"
+        android:layout_width="69dp"
         android:layout_height="wrap_content"
         android:background="@drawable/buttenstyle"
         android:shadowColor="@color/purple_500"
         android:text="Help"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        />
 
-    <ImageView
+
+    <TextView
         android:id="@+id/refresh"
-        android:layout_width="57dp"
-        android:layout_height="27dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:layout_marginEnd="7dp"
-        android:src="@drawable/ic_baseline_refresh_24" />
+        android:background="@drawable/buttenstyle"
+        android:text="More Code" />
 
 
 </RelativeLayout>
