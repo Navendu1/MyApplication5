@@ -1,19 +1,32 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.content.IntentFilter
+import android.content.SharedPreferences
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.view.isVisible
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import kotlinx.coroutines.delay
 import kotlin.concurrent.thread
 import kotlin.properties.Delegates
 
 class help : AppCompatActivity() {
 
+    lateinit var mAdView9 : AdView
+
+    var networkChangeListener: MyReceiver = MyReceiver()
+
+    private var mInterstitialAd: InterstitialAd? = null
+    private final var TAG = "help"
     lateinit var help: TextView
     lateinit var textView : TextView
     lateinit var refresh: TextView
@@ -28,6 +41,19 @@ class help : AppCompatActivity() {
         noData = findViewById(R.id.noData)
         noData.isVisible=false
         val loadingdialog  = LoadingDialog(this)
+        //ad baner
+        val adView = AdView(this)
+
+        adView.adSize = AdSize.BANNER
+
+        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
+
+
+        MobileAds.initialize(this) {}
+
+        mAdView9 = findViewById(R.id.adView9)
+        val adRequest = AdRequest.Builder().build()
+        mAdView9.loadAd(adRequest)
 
 
 
@@ -50,41 +76,49 @@ class help : AppCompatActivity() {
 
 
         refresh.setOnClickListener {
-            Toast.makeText(this, "refresh", Toast.LENGTH_SHORT).show()
-            loadingdialog.startLoading()
-            count +=1
+            if (mInterstitialAd != null) {
+                save_id(refresh.id)
+                mInterstitialAd?.show(this)
+            } else {
+                loadingdialog.startLoading()
+                count += 1
 
-            Handler(Looper.getMainLooper()).postDelayed({
-                loadingdialog.hideDialog()
-                textView.isVisible= true
+                Handler(Looper.getMainLooper()).postDelayed({
+                    loadingdialog.hideDialog()
+                    textView.isVisible = true
 
-            }, (2000..3000).random().toLong())
-            textView.isVisible=false
+                }, (2000..3000).random().toLong())
+                textView.isVisible = false
 
-            when (count) {
-                1 -> textView.text = redeem1
-                2 ->
-                    textView.text =  redeem2
+                when (count) {
+                    1 -> textView.text = redeem1
+                    2 ->
+                        textView.text = redeem2
 
-                3 -> textView.text = redeem3
-                4 -> textView.text = redeem4
-                5 -> textView.text = redeem5
-                6 -> textView.text = redeem6
-                7 -> textView.text = redeem7
-                else -> { // Note the block
-                    noData.isVisible= true
-                    scrollView.isVisible = false
-                    refresh.isVisible=false
+                    3 -> textView.text = redeem3
+                    4 -> textView.text = redeem4
+                    5 -> textView.text = redeem5
+                    6 -> textView.text = redeem6
+                    7 -> textView.text = redeem7
+                    else -> { // Note the block
+                        noData.isVisible = true
+                        scrollView.isVisible = false
+                        refresh.isVisible = false
+                    }
                 }
             }
         }
 
         help.setOnClickListener {
-            Toast.makeText(this, "help", Toast.LENGTH_SHORT).show()
-            intent = Intent(applicationContext, redeemcode::class.java)
-            startActivity(intent)
+            if (mInterstitialAd != null) {
+                save_id(help.id)
+                mInterstitialAd?.show(this)
+            } else {
+                intent = Intent(applicationContext, redeemcode::class.java)
+                startActivity(intent)
 
-            // goto help activity
+                // goto help activity
+            }
         }
 
 
@@ -93,4 +127,83 @@ class help : AppCompatActivity() {
 
 
     }
+
+
+    private fun save_id(id: Int) {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("save", MODE_PRIVATE)
+        val editor: SharedPreferences.Editor = sharedPreferences.edit()
+        editor.putInt("mID", id)
+        editor.apply()
+
+    }
+
+    private fun load_id(): Int {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("save", MODE_PRIVATE)
+        return  sharedPreferences.getInt("mID", 0)
+    }
+
+    override fun onStart() {
+
+        MobileAds.initialize(this)
+
+
+
+        //add adMob
+        var adRequest = AdRequest.Builder().build()
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                Log.d(TAG, adError?.message)
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+                mInterstitialAd?.fullScreenContentCallback = object: FullScreenContentCallback() {
+
+                    override fun onAdDismissedFullScreenContent() {
+                        intent = when ( load_id()) {
+                            R.id.help -> {
+                                Intent(applicationContext, redeemcode ::class.java)
+                            }
+//                            R.id.refresh -> {
+//                                Intent(applicationContext, com.example.myapplication.help::class.java)
+//                            }
+
+
+                            else -> return
+                        }
+
+                        startActivity(intent)
+                        Log.d(TAG, "Ad was dismissed.")
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(adError: AdError?) {
+                        Log.d(TAG, "Ad failed to show.")
+                    }
+
+                    override fun onAdShowedFullScreenContent() {
+                        Log.d(TAG, "Ad showed fullscreen content.")
+                        mInterstitialAd = null;
+                    }
+
+                }
+            }
+        })
+
+
+
+
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION)
+        registerReceiver(networkChangeListener, filter)
+        super.onStart()
+    }
+
+    override fun onStop() {
+        unregisterReceiver(networkChangeListener)
+        super.onStop()
+    }
+
 }

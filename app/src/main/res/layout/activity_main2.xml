@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/redeemCode"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
         android:layout_marginStart="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="40dp"
@@ -26,12 +26,13 @@
 
     <Button
         android:id="@+id/opinionRewards"
-        android:layout_width="318dp"
-        android:layout_height="0dp"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="46dp"
         android:layout_marginTop="183dp"
         android:layout_marginEnd="35dp"
-        android:layout_marginBottom="50dp"
 
+        android:layout_marginBottom="50dp"
         android:background="@drawable/buttenstyle"
         android:text="google opinion rewards free diamond"
         android:textColor="@color/white"
@@ -39,13 +40,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/redeemCode"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/calculator"
-        android:layout_width="325dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="30dp"
+        android:layout_width="339dp"
+        android:layout_height="73dp"
         android:layout_marginBottom="214dp"
         android:background="@drawable/buttenstyle"
         android:text="Free Diamon Calculator"
@@ -54,5 +55,39 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/redeemCode" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="LARGE_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calculator"
+        app:layout_constraintVertical_bias="0.991"></com.google.android.gms.ads.AdView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        app:adSize="LARGE_BANNER"
+
+
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toTopOf="@+id/opinionRewards"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></com.google.android.gms.ads.AdView>
 </androidx.constraintlayout.widget.ConstraintLayout>
